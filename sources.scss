@@ -1,0 +1,155 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+$font: 'Josefin Sans', sans-serif;
+
+$spine-width: 1.5vw;
+
+
+@keyframes wider{
+  to{
+    opacity: 1;
+  }
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.book-description{
+  font-family: $font;
+  text-align: center;
+  // pointer-events: none;
+  bottom: 0px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.book-description:hover{
+  color: grey;
+  text-decoration: underline;
+
+}
+
+.book-title{
+  // color: red;
+}
+
+.container{
+  width: 85vw;
+  margin: 0 auto;
+  left: 0vw;
+  position: relative;
+}
+.header {
+  margin-bottom: 35px;
+  text-align: center;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  font-family: $font;
+  position: relative;
+}
+
+
+.all-books{
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 80vw;
+  display: flex;
+  flex-wrap:wrap;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  // border: 2px green solid;
+}
+
+.book{
+  transition: all .5s ease-in-out;
+  flex-grow:0;
+  perspective: 800px;
+  // border: 2px dashed pink;
+
+}
+
+.flex-item-1 {
+  width: 5%;
+  // transform: rotateY(-80deg);
+
+  // flex: 1 auto;
+  // background: tan;
+}
+.flex-item-2 {
+  width: 15%;
+  z-index: 300;
+  // transform: rotateY(-60deg);
+
+  // flex: 2 auto;
+  // background: green;
+}
+
+.flex-item-4 {
+  width: 25%;
+  // background: yellow;
+  // transform: rotateY(-10deg);
+
+}
+
+
+
+.book-cover{
+  height: 100%;
+  width: auto;
+  position: relative;
+  box-shadow: 0px 3px 5px 0px rgba(30,30,30,.5)
+}
+.book-3D{
+  pointer-events: none;
+
+  height: 20vw;
+  // background: green;
+  position: relative;
+  display: block;
+  // transform: rotateY(-80deg);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transition: transform .65s;
+  font-family: $font;
+}
+
+.spine {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  height: 97.8%;//hmmm
+  background: rgba(50,50,50,1);
+  transform-origin: center;
+  transform: rotateY(60deg);
+
+
+}
+
+.spine-left {
+  width: $spine-width;
+  right: 10vw;
+}
+
+.spine-right {
+  right: -4.5vw;
+  width: $spine-width;
+
+
+}
+.spine-far-right {
+  right: -102px;
+  width: $spine-width;
+}
+
+.spine-far-left {
+  width: $spine-width;
+  right: 33px;
+  top: 2px;
+}
